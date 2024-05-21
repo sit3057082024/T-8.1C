@@ -69,16 +69,7 @@ POST: http://localhost:5000/chat
 Data:
 {
     "userMessage": "I do not have Pizza dough. Give instructions to make this pizza using bread",
-    "chatHistory": [
-        {
-            "User": "Hello",
-            "Llama": " Hello! Welcome to the chat! How can I assist you today? Is there something specific you would like to talk about or ask?"
-        },
-        {
-            "User": "Give me instructtions to cook a pizza Give me instructtions to cook a pizza ",
-            "Llama": " Great! I'd be happy to help you with that. Here are some basic instructions for cooking a pizza:\n\nIngredients:\n\n* Pizza dough (homemade or store-bought)\n* Pizza sauce\n* Mozzarella cheese (or your preferred cheese)\n* Toppings of your choice (e.g. pepperoni, mushrooms, onions, bell peppers, etc.)\n\nInstructions:\n\n1. Preheat your oven to 425-450°F (220-230°C).\n2. If using homemade dough, roll it out to your desired thickness and shape on a floured surface. If using store-bought dough, follow the package instructions for thawing and rising.\n3. Spread the pizza sauce over the dough, leaving a small border around the edges.\n4. Sprinkle the mozzarella cheese over the sauce, making sure to cover the entire surface.\n5. Add your desired toppings, making sure to leave enough space for the cheese to melt and the toppings to cook evenly.\n6. Bake the pizza in the preheated oven for 10-15 minutes, or until the crust is golden brown and the cheese is melted and bubbly.\n7. Remove the pizza from the oven and let it cool for a few minutes before slicing and serving.\n\nThat's it! Of course, you can always get creative with your toppings and add your own favorite ingredients to make the pizza your own. Enjoy!"
-        }
-    ]
+    "chatHistory": "", ### can be anything a String List List of Strings
 }
 ```
 
