@@ -30,17 +30,14 @@ def chat():
     if 'userMessage' not in data or not isinstance(data['userMessage'], str):
         return jsonify({'error': 'userMessage must be a string'}), 400
 
-    if 'chatHistory' not in data or not isinstance(data['chatHistory'], list):
+    if 'chatHistory' not in data:
         return jsonify({'error': 'chatHistory must be a list'}), 400
 
-    if not all(isinstance(item, dict) and 'User' in item and 'Llama' in item for item in data['chatHistory']):
-        return jsonify({'error': 'chatHistory must be a list of dictionaries with keys User and Llama'}), 400
 
     user_message = data['userMessage']
     chat_history = data['chatHistory']
-    chat_history_str = '\n'.join([f"{item['User']} - {item['Llama']}" for item in chat_history])
 
-    QUERY = f"[INST]GIVEN THE CHAT HISTORY:\n{chat_history_str}\nAND THE LATEST MESSAGE FROM USER:\n{user_message}\nGIVE A RESPONSE TO THE USER\n[/INST]"
+    QUERY = f"""[INST]GIVEN THE CHAT HISTORY:\n{chat_history}\nAND THE LATEST MESSAGE FROM USER:\n{user_message}\nGIVE A RESPONSE TO THE USER\n[/INST]"""
 
     response = base_model.complete(query=QUERY, max_generated_token_count=500).generated_output
 
